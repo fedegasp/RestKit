@@ -19,6 +19,7 @@ Docs/API
 *.perspectivev3
 *.xcuserdatad
 *.xccheckout
+*.xcscmblueprint
 
 Examples/RKDiscussionBoardExample/discussion_board_backend/public/system/attachments/*
 
