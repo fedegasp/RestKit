@@ -84,6 +84,17 @@ void RKSetLoggingClass(Class <RKLogging> loggingClass);
  The message will only be logged if the log level for the active component is equal to or higher
  than the level the message was logged at (in this case, Info).
  */
+
+#define XCODE_COLORS_ESCAPE @"\033["
+#define XCODE_COLORS_RESET_FG  XCODE_COLORS_ESCAPE @"fg;" // Clear any foreground color
+#define XCODE_COLORS_RESET_BG  XCODE_COLORS_ESCAPE @"bg;" // Clear any background color
+#define XCODE_COLORS_RESET     XCODE_COLORS_ESCAPE @";\n"   // Clear any foreground or background color
+
+#define RED(S) XCODE_COLORS_ESCAPE @"fg192,57,43;\n" S XCODE_COLORS_RESET
+#define ORANGE(S) XCODE_COLORS_ESCAPE @"fg230,126,34;\n" S XCODE_COLORS_RESET
+#define GREEN(S) XCODE_COLORS_ESCAPE @"fg39,174,96;\n" S XCODE_COLORS_RESET
+
+
 #define RKLogCritical(...)                                                              \
 RKlcl_log(RKLogComponent, RKlcl_vCritical, @"" __VA_ARGS__)
 
